@@ -52,7 +52,7 @@ function welklesuur(){
     } else if(uur <= 14 && min < 55){
         vlguur = 14;
         vlgmin = 55;
-    } else if(uur <= 16){
+    } else if(uur < 16){
         vlguur = 16;
         vlgmin = 0;
     } else{
