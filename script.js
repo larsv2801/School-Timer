@@ -32,6 +32,7 @@ function welklesuur(){
             } else{
                 vlguur = 10;
                 vlgmin = 0;
+            } 
             } else {
         vlguur = 9;
         vlgmin = 10;
@@ -47,6 +48,7 @@ function welklesuur(){
             } else{
                 vlguur = 11;
                 vlgmin = 55;
+            } 
             } else {
         vlguur = 11;
         vlgmin = 5;
@@ -59,6 +61,7 @@ function welklesuur(){
             } else{
                 vlguur = 14;
                 vlgmin = 5;
+            } 
             } else {
         vlguur = 11;
         vlgmin = 55;
@@ -84,6 +87,7 @@ function welklesuur(){
             } else{
                 vlguur = 16;
                 vlgmin = 0;
+        } 
         } else {
         vlguur = 14;
         vlgmin = 55;
