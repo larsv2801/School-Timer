@@ -24,18 +24,45 @@ gettijd();
 setInterval(gettijd,1000);
 
 function welklesuur(){
-    if(uur <= 9 && min < 10){
+    if(uur <= 9){
+        if(uur === 9){
+            if(min < 10){
+                vlguur = 9;
+                vlgmin = 10;
+            } else{
+                vlguur = 10;
+                vlgmin = 0;
+            } else {
         vlguur = 9;
         vlgmin = 10;
-    } else if(uur <= 10 && min < 0){
+        }
+    } else if(uur < 10){
         vlguur = 10;
         vlgmin = 0;
-    } else if(uur <= 11 && min < 5){
+    } else if(uur <= 11){
+        if(uur === 11){
+            if(min < 5){
+                vlguur = 11;
+                vlgmin = 5;
+            } else{
+                vlguur = 11;
+                vlgmin = 55;
+            } else {
         vlguur = 11;
         vlgmin = 5;
-    } else if(uur <= 11 && min < 55){
+        }
+    } else if(uur <= 11){
+        if(uur === 11){
+            if(min < 55){
+                vlguur = 11;
+                vlgmin = 55;
+            } else{
+                vlguur = 14;
+                vlgmin = 5;
+            } else {
         vlguur = 11;
         vlgmin = 55;
+        }
     } else if(uur <= 14 ){
         if(uur === 14){
             if(min < 5){
@@ -49,9 +76,18 @@ function welklesuur(){
         vlguur = 14;
         vlgmin = 5;
         }
-    } else if(uur <= 14 && min < 55){
+    } else if(uur <= 14){
+        if(uur === 14){
+            if(min < 55){
+                vlguur = 14;
+                vlgmin = 55;
+            } else{
+                vlguur = 16;
+                vlgmin = 0;
+        } else {
         vlguur = 14;
         vlgmin = 55;
+        }
     } else if(uur < 16){
         vlguur = 16;
         vlgmin = 0;
