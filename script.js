@@ -116,6 +116,9 @@ function tijdover(){
     if(uurover === 0 && minover < 51){
         hogte = 100 - (minover * 2);
         document.getElementById("progressb").style.height = hogte + "dvh";
+    } else {
+    hogte = 0;
+    document.getElementById("progressb").style.height = hogte + "dvh";
     }
     console.log("nog" + uurover + " : " + minover);
     
