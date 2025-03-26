@@ -24,48 +24,18 @@ gettijd();
 setInterval(gettijd,1000);
 
 function welklesuur(){
-    if(uur <= 9){
-        if(uur === 9){
-            if(min < 10){
-                vlguur = 9;
-                vlgmin = 10;
-            } else{
-                vlguur = 10;
-                vlgmin = 0;
-            } 
-            } else {
+    if(uur <= 9 && min < 10){
         vlguur = 9;
         vlgmin = 10;
-        }
-    } else if(uur < 10){
+    } else if(uur <= 10 && min < 0){
         vlguur = 10;
         vlgmin = 0;
-    } else if(uur <= 11){
-        if(uur === 11){
-            if(min < 5){
-                vlguur = 11;
-                vlgmin = 5;
-            } else{
-                vlguur = 11;
-                vlgmin = 55;
-            } 
-            } else {
+    } else if(uur <= 11 && min < 5){
         vlguur = 11;
         vlgmin = 5;
-        }
-    } else if(uur <= 11){
-        if(uur === 11){
-            if(min < 55){
-                vlguur = 11;
-                vlgmin = 55;
-            } else{
-                vlguur = 14;
-                vlgmin = 5;
-            } 
-            } else {
+    } else if(uur <= 11 && min < 55){
         vlguur = 11;
         vlgmin = 55;
-        }
     } else if(uur <= 14 ){
         if(uur === 14){
             if(min < 5){
@@ -79,19 +49,9 @@ function welklesuur(){
         vlguur = 14;
         vlgmin = 5;
         }
-    } else if(uur <= 14){
-        if(uur === 14){
-            if(min < 55){
-                vlguur = 14;
-                vlgmin = 55;
-            } else{
-                vlguur = 16;
-                vlgmin = 0;
-        } 
-        } else {
+    } else if(uur <= 14 && min < 55){
         vlguur = 14;
         vlgmin = 55;
-        }
     } else if(uur < 16){
         vlguur = 16;
         vlgmin = 0;
@@ -116,9 +76,9 @@ function tijdover(){
     if(uurover === 0 && minover < 51){
         hogte = 100 - (minover * 2);
         document.getElementById("progressb").style.height = hogte + "dvh";
-    } else {
-    hogte = 0;
-    document.getElementById("progressb").style.height = hogte + "dvh";
+    } else if (minover > 50){
+        hogte = 0;
+        document.getElementById("progressb").style.height = hogte + "dvh";
     }
     console.log("nog" + uurover + " : " + minover);
     
@@ -132,4 +92,21 @@ function tijdover(){
     } else {
         document.getElementById("uren").innerHTML = uurover;
     }
+}
+
+var kleur;
+function changeColor(){
+    kleur = document.getElementById("colorpicker").value;
+    document.getElementById("progressb").backgroundColor = kleur;
+    localStorage.setItem("kleur", kleur);
+}
+
+function getcolor(){
+    var kleurr = localStorage.getItem("kleur");
+    if(kleurr){
+    kleur = kleurr;
+    document.getElementById("progressb").backgroundColor = kleur;
+    document.getElementById("colorpicker").value = kleur;
+    }
+    
 }
