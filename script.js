@@ -98,11 +98,11 @@ var kleur;
 function changeColor(){
     kleur = document.getElementById("colorpicker").value;
     document.getElementById("progressb").backgroundColor = kleur;
-    localStorage.setItem("kleur", kleur);
+    localStorage.setItem("prkleur", kleur);
 }
 
 function getcolor(){
-    var kleurr = localStorage.getItem("kleur");
+    var kleurr = localStorage.getItem("prkleur");
     if(kleurr){
     kleur = kleurr;
     document.getElementById("progressb").backgroundColor = kleur;
