@@ -97,7 +97,7 @@ function tijdover(){
 var kleur;
 function changeColor(){
     kleur = document.getElementById("colorpicker").value;
-    document.getElementById("progressb").backgroundColor = kleur;
+    document.getElementById("progressb").style.backgroundColor = kleur;
     localStorage.setItem("prkleur", kleur);
 }
 
@@ -105,7 +105,8 @@ function getcolor(){
     var kleurr = localStorage.getItem("prkleur");
     if(kleurr){
     kleur = kleurr;
-    document.getElementById("progressb").backgroundColor = kleur;
+    console.log(kleur);
+    document.getElementById("progressb").style.backgroundColor = kleur;
     document.getElementById("colorpicker").value = kleur;
     }
     
